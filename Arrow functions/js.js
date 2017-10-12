@@ -63,3 +63,24 @@ connectES6();
 connectES6("host");
 connectES6("host", 8080);
 connectES6(undefined, undefined, "FTP");
+
+
+function classList (){
+	let mesg = "";
+	console.log(arguments.length);
+	for (let i = 0; i < arguments.length; i++){
+		
+		if (i === 0) {
+			mesg +=  arguments[i]+ " has students: "; 
+			console.log(i);
+		} else if (i >= 1){
+			console.log(i);
+			mesg += arguments[i] + ", ";
+		}
+		console.log(mesg);
+	}
+		return mesg;
+}
+
+
+console.log(classList('AdvancedJS', 'Angela', 'Alex', 'Ann'));
