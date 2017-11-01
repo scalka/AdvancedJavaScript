@@ -1,23 +1,50 @@
-
-
-function calcTax (price) {
-	const tax = .23;
-  return (price * tax);
+//build constractor f
+function Person(name, age){
+	this.name = name;
+	this.age = age;
+	this.hi = function () {
+		console.log(`Hi my name is ${this.name}`);
+	};
+}
+//take constructor f and attach prototype hello f to it
+Person.prototype.hello = function(){
+	console.log(`Hello my name is ${this.name}`);
 }
 
-let phone = 100;
-let tv = 200;
-console.log(calcTax(phone));
-console.log(calcTax(tv));
 
 
-console.log(Math.floor(Math.random()*100));
-console.log(Math.ceil(43.8));
-console.log(Number.isInteger(2017));
 
 
-//string interoplation
-console.log(`I own a pet ${myPet}.`)
-let myName = 'Sylwia';
-let myCity = 'Dublin';
-console.log(`My name is ${myName}. My favorite city is ${myiCty}.`);
+function Car(make, model, price) {
+	this.make = make;
+	this.model = model;
+	this.price = price;
+}
+
+Car.prototype.logDetails = function() {
+	console.log(`${this.make} is ${this.model} and costs ${this.price}`);
+}
+Car.prototype.hi = function() {
+	console.log(`hi`);
+}
+
+const mazda = new Car('Mazda', '2', 100000);
+mazda.logDetails();
+
+
+function ElectricCar(make, model, price, range, autonomous) {
+	Car.call(this, make, model, price);
+	this.range = range;
+	this.autonomous = autonomous;
+}
+
+ElectricCar.prototype = Object.create(Car.prototype);
+
+ElectricCar.prototype.logDetails = function() {
+	console.log(`${this.make} is ${this.model} and costs ${this.price}. 
+				autonomous: ${this.autonomous} range: ${this.range}`);
+}
+
+const ele = new ElectricCar('Electric', 'ELE', 1002222000, 500, true);
+ele.logDetails();
+ele.hi();
