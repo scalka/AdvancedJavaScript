@@ -44,3 +44,43 @@ console.log(arr);
 arr.forEach(function(movie){
 	movie.print();
 });
+
+
+
+let person = {
+	firstname: 'Jim',
+	lastname: 'Jones',
+	age: 28,
+	gender: 'm',
+	interests: [
+		'football',
+		' music'
+	],
+	greeting() {
+		console.log(`My name is ${this.firstname}`)
+	},
+	bio() {
+		console.log(`${this.firstname} ${this.lastname} is ${this.age} years old. He likes ${this.interests}`)
+	}
+
+}
+
+let person2 = {
+	firstname: 'Samantha',
+	lastname: 'Smith',
+	age: 24,
+	gender: 'f',
+	interests: [
+		'rugby',
+		'surfing'
+	],
+	greeting() {
+		console.log(`My name is ${this.firstname}`)
+	},
+	bio() {
+		console.log(`${this.firstname} ${this.lastname} is ${this.age} years old. She likes ${this.interests}`)
+	}
+}
+
+person.bio();
+person2.bio();
