@@ -1,3 +1,16 @@
+//prototypal inheritance
+const Persona = {
+	name: 'Andrew',
+	age: 44,
+	print: function(){
+		console.log(`Hi my name is ${this.name}`);
+	}
+}
+Persona.print();
+const person2 = Object.create(Persona);
+person2.name = 'Dave';
+
+//classical inheritance
 //build constractor f
 function Person(name, age){
 	this.name = name;
@@ -12,7 +25,8 @@ Person.prototype.hello = function(){
 }
 
 
-
+const p1 = new Person();
+p1.hi();
 
 
 function Car(make, model, price) {
