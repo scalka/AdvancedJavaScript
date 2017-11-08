@@ -7,8 +7,14 @@ const Persona = {
 	}
 }
 Persona.print();
-const person2 = Object.create(Persona);
-person2.name = 'Dave';
+
+const Teacher = Object.create(Persona);
+Teacher.name = 'Dave';
+Teacher.subject = "JS";
+Teacher.print = function (){
+	console.log(`Hey my name is ${this.name} ${this.subject}`);
+};
+Teacher.print();
 
 //classical inheritance
 //build constractor f
@@ -16,7 +22,7 @@ function Person(name, age){
 	this.name = name;
 	this.age = age;
 	this.hi = function () {
-		console.log(`Hi my name is ${this.name}`);
+		console.log(`Czesc my name is ${this.name}`);
 	};
 }
 //take constructor f and attach prototype hello f to it
@@ -32,6 +38,8 @@ function Car(make = 'bmw', model = 'X', price) {
 	this.model = model;
 	this.price = price;
 }
+//methods that are gonna be passed down, we attach them to the prototype of the object
+//then it won't be copied to each prototype separately, but it will be attached to its prototype = saves memory
 Car.prototype.logDetails = function() {
 	console.log(`${this.make} is ${this.model} and costs ${this.price}`);
 }
