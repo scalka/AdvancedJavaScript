@@ -23,18 +23,15 @@ function Person(name, age){
 Person.prototype.hello = function(){
 	console.log(`Hello my name is ${this.name}`);
 }
-
-
 const p1 = new Person();
 p1.hi();
 
 
-function Car(make, model, price) {
+function Car(make = 'bmw', model = 'X', price) {
 	this.make = make;
 	this.model = model;
 	this.price = price;
 }
-
 Car.prototype.logDetails = function() {
 	console.log(`${this.make} is ${this.model} and costs ${this.price}`);
 }
@@ -45,15 +42,14 @@ Car.prototype.hi = function() {
 const mazda = new Car('Mazda', '2', 100000);
 mazda.logDetails();
 
-
 function ElectricCar(make, model, price, range, autonomous) {
+	//run Car and run/call it for me in this scope
 	Car.call(this, make, model, price);
 	this.range = range;
 	this.autonomous = autonomous;
 }
-
+//manually point at car prototype
 ElectricCar.prototype = Object.create(Car.prototype);
-
 ElectricCar.prototype.logDetails = function() {
 	console.log(`${this.make} is ${this.model} and costs ${this.price}. 
 				autonomous: ${this.autonomous} range: ${this.range}`);
