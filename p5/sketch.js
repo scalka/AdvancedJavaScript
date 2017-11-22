@@ -6,8 +6,7 @@ let numCircles = 5;
 function Circle(x = 50, y = 50, r =10, col = '#ffc689')  {
 	this.x = x;
 	this.y = y;
-	this.r = r;
-	this.col = col;
+	this.r = r;	this.col = col;
 	this.vx = random(-5, 5);
 	this.vy = random(-5, 5);
 }
@@ -31,7 +30,7 @@ ChildCircle.prototype.move = function() {
 	this.x += this.vx;
 	this.y += this.vy;
 	if (this.x <= 0 || this.x >= 500 ){
-		this.vx = -this.vx;
+		thi.svx = -this.vx;
 	}
 	if (this.y <= 0 || this.y >= 500){
 		this.vy = -this.vy;
