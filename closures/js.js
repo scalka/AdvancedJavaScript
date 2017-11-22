@@ -1,23 +1,27 @@
-
-
-function calcTax (price) {
-	const tax = .23;
-  return (price * tax);
+// TEXT TERMINATOR
+function terminateText(txt) {
+	function textTerminator(term){
+		return term + txt;
+	}
+	return textTerminator;
 }
 
-let phone = 100;
-let tv = 200;
-console.log(calcTax(phone));
-console.log(calcTax(tv));
+
+const exclaim = terminateText('!!!');
+const ellipsis = terminateText('...');
+
+console.log(exclaim('hello')); // 'hello!!!'
+console.log(ellipsis('goodbye')); // 'goodbye...'
 
 
-console.log(Math.floor(Math.random()*100));
-console.log(Math.ceil(43.8));
-console.log(Number.isInteger(2017));
+//Outer inner
+function outer() {
+	let a =10;
+	function inner() {
+		console.log(a);
+	}
+	return inner;
+}
 
-
-//string interoplation
-console.log(`I own a pet ${myPet}.`)
-let myName = 'Sylwia';
-let myCity = 'Dublin';
-console.log(`My name is ${myName}. My favorite city is ${myiCty}.`);
+let fn = outer();
+fn();
