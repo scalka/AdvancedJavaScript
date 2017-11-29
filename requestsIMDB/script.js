@@ -16,7 +16,7 @@ fetch(url)
     console.log('fetch() success.',data);
     h.innerHTML = data[0].title;
     p.innerHTML = `${data[0].title} was directed by ${data[0].director}.
-                  <br> It stars:${data[0].stars}. 
+                  <br> It stars:${data[0].stars}.
                   <br>Its budget was ${data[0].metadata.budget}.`;
   })
   .catch(function(error) {
