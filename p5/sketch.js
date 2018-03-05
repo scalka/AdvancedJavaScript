@@ -30,7 +30,7 @@ ChildCircle.prototype.move = function() {
 	this.x += this.vx;
 	this.y += this.vy;
 	if (this.x <= 0 || this.x >= 500 ){
-		thi.svx = -this.vx;
+		this.svx = -this.vx;
 	}
 	if (this.y <= 0 || this.y >= 500){
 		this.vy = -this.vy;
